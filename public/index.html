@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+</head>
+<body>
+    <h1>Video Player</h1>
+    <video controls width="600" id="video-player">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Fetch video file list from the server
+        fetch('/api/videos')
+            .then(response => response.json())
+            .then(videoFiles => {
+                if (videoFiles.length > 0) {
+                    // Set the first video file from the list as the video source
+                    const videoPlayer = document.getElementById('video-player');
+                    videoPlayer.src = videoFiles[0];  // Dynamically set the video source
+                } else {
+                    alert("No video files found.");
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching video files:', error);
+            });
+    </script>
+</body>
+</html>
+
