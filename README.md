@@ -1,4 +1,9 @@
 # watch-now
 A simple server to make your video stream-able so that anyone can watch the video.
 
-Minimum Nodejs Version : `14.0.0`
+## Contributor's Guide
+
+- Minimum requirement for **node** version : `15.0.0v`
+- Install ngrok.
+- Clone Repository : `git clone https://github.com/ankushT369/watch-now`
+- Run locally : `node filename.js`
