@@ -11,6 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const videoFiles = fs.readdirSync(path.join(__dirname, 'public')).filter(file => file.endsWith('.mp4'));
 
+// Get the list of videos
 app.get('/api/videos', (req, res) => {
     res.json(videoFiles);
 });
